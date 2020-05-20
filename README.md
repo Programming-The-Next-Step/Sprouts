@@ -1,5 +1,4 @@
-# Sprouts
-The Sprouts Game
+# The Sprouts Game
 Invented in 1967, Sprouts is a two player game that starts with any number of dots randomly placed. Taking turns, players will connect two dots with a line and adding a new dot somewhere along this line after which their turn ends. The game ends when no more connections can be made and the player to draw the last valid line is the winner. They are constrained by the following rules:
 
 1. The line may take on any shape, but not get too close to itself, or cross existing lines.
