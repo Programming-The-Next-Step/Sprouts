@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed May 13 19:38:56 2020
+
+@author: anne
+"""
+'''
+Sprouts
+Sprouts is a simple 3 rule game created by John Horton Conway and Mike Paterson. 
+The game begins with some initial number of dots greater than 2 and players take turns connecting dots with lines. 
+Each time a player draws a line, that player places a dot on that line. 
+This implementation of the game allows users to play sprouts in ascii from the command line.
+
+The Rules
+1.The must not touch or cross itself or any other line.
+2.The new spot cannot be placed on top of one of the endpoints of the new line. 
+Thus the new spot splits the line into two shorter lines.
+3. No spot may have more than three lines attached to it. 
+For the purposes of this rule, a line from the spot to itself counts as two attached lines and new spots are counted as having two lines already attached to them.
+
+Implementation
+I am using Python for this project, as I think it will allow for more creative freedom and flexibility. I will start by implementing a proof of principle that works and add upon this.
+
+Packages (still deciding on the best ones):
+Pygame: used for design aspects of the game
+Sys: used to exit/quit the game as well as other implementations
+
+Functions/Packages:
+Function to run the game
+Function to draw the (first) dot
+Function to recognise mouse and draw line
+Function to recognise/implement rules
+
+Must have time:
+Placement of dots
+Drawing of lines
+Implementation of rules
+Functional game 
+Scoreboard
+Multiplayer
+Instruction
+
+Should have time:
+Visual presentation (colouring, background ect)
+  
+Could have time:
+Online game (need to look into this)
+Increase in complexity (three dots ect.)
+
+
