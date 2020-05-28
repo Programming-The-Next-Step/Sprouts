@@ -315,6 +315,43 @@ def distance_check(dotposition):
             return True 
     return False
 
+#These two check check whether line intersects with existing line:
+def line_intersection(line1, line2):
+    # from: https://stackoverflow.com/questions/20677795/how-do-i-compute-the-intersection-point-of-two-lines
+    # and adapted
+    xdiff = (line1[0][0] - line1[1][0], line2[0][0] - line2[1][0])
+    ydiff = (line1[0][1] - line1[1][1], line2[0][1] - line2[1][1])
+
+    def det(a, b):
+        return a[0] * b[1] - a[1] * b[0]
+
+    div = det(xdiff, ydiff)
+    if div == 0:
+       #raise Exception('lines do not intersect')
+       return False
+
+    d = (det(*line1), det(*line2))
+    x = det(d, xdiff) / div
+    y = det(d, ydiff) / div
+
+    if ((x < line1[0][0] or x < line2[0][0] or x > line1[1][0] or x > line2[1][0]) and \
+        (y < line1[0][1] or y < line2[0][1] or y > line1[1][1] or y > line2[1][1])):
+        return False
+    else:
+        return True #intersect
+
+#(Needs updating)
+def intersect_check(current_line):
+    for line in final_lines:
+        for i in range(len(final_lines) - 1):
+            segment1 = (final_lines[i], final_lines[i+1])
+            for j in range(1, len(current_line) - 2):
+                segment2 = (current_line[i], current_line[i+1])
+                if line_intersection(segment1, segment2) == False:
+                    print('error')
+
+                else:
+                    print('good')
 
 if __name__ == '__main__':
     main_menu()
@@ -324,8 +361,12 @@ if __name__ == '__main__':
 
 #Only allows three lines per one dot.
 
-#Line can't cross itself... no idea!!
+#Line can't cross itself, not just existing lines
 
 #Keep and assign score. 
 
 #Implement GAME OVER
+
+#Change menu over to old one (to keep name info)
+
+#If time: make it look nice.
